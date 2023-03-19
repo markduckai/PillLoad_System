@@ -14,6 +14,37 @@ ENTITY total IS
 END total;
 
 ARCHITECTURE func_f OF total IS
-BEGIN
+    SIGNAL tmp1 : STD_LOGIC_VECTOR(3 DOWNTO 0); --百位
+    SIGNAL tmp2 : STD_LOGIC_VECTOR(3 DOWNTO 0); --十位
+    SIGNAL tmp3 : STD_LOGIC_VECTOR(3 DOWNTO 0); --个位
+    COMPONENT display IS
+        PORT (
+            pin : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+            pout : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        );
+    END COMPONENT;
 
+BEGIN
+    PROCESS (clr, cnt_init, clk_divide, en_cnt)
+    BEGIN
+        IF (clr = '0') THEN
+            tmp1 <= "0000";
+            tmp2 <= "0000";
+            tmp3 <= "0000";
+        ELSIF (en_cnt = '1' AND cn_init = '1') THEN
+            IF (clk'event AND clk = '1') THEN
+                IF (tmp3 = "1010") THEN
+                    tmp3 <= "0000";
+                    tmp2 <= tmp2 + 1;
+                END IF;
+                IF (tmp2 = "1010") THEN
+                    tmp2 <= "0000";
+                    tmp1 <= tmp1 + 1;
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
+    u1 : display PORT MAP(tmp1, ou(20 DOWNTO 14));
+    u2 : display PORT MAP(tmp2, ou(13 DOWNTO 7));
+    u3 : displat PORT MAP(tmp3, ou(6 DOWNTO 0));
 END func_f;
