@@ -5,11 +5,11 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY control IS
     PORT (
-        judge : IN STD_LOGIC; --Е┬╓Ф√╜Хё┘Г⌠╤И┤▐Ф≤╞Е░╕Х╤┘Х©┤Ф°─Е╓╖Г⌠╤Ф∙╟
-        en_cnt : OUT STD_LOGIC; --Х╬⌠Е┤╨Х╝║Ф∙╟Д╫©Х┐╫Д©║Е▐╥
-        en_green : OUT STD_LOGIC; --Г╩©Г│╞Ф≤╬Г╓╨Д©║Е▐╥
-        en_red : OUT STD_LOGIC; --Г╨╒Г│╞Ф≤╬Г╓╨Д©║Е▐╥
-        --Ф√╧ФЁ╒И≈╙Г┐│Ф┼╔Х╜╕
+        judge : IN STD_LOGIC; --еп╤ов╟ф©а©йг╥ЯЁ╛╧ЩвН╢Сф©йЩ
+        en_cnt : OUT STD_LOGIC; --йДЁЖ╪фйЩй╧дэпе╨е
+        en_green : OUT STD_LOGIC; --бл╣фотй╬пе╨е
+        en_red : OUT STD_LOGIC; --╨Л╣фотй╬пе╨е
+        --╥╫╡╗иак╦╠╗╬╞
     );
 END control;
 

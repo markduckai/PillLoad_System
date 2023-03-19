@@ -5,18 +5,18 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY total IS
     PORT (
-        clr : IN STD_LOGIC; --输入药片总量清零信号
-        cnt_init : IN STD_LOGIC; --输入启用计数信号
-        clk_divide : IN STD_LOGIC; --输入分频时钟信号
-        en_cnt : IN STD_LOGIC; --输入计数使能信号
-        ou : OUT STD_LOGIC_VECTOR(20 DOWNTO 0) --3个数码管显示(总药片数量)
+        clr : IN STD_LOGIC; --����ҩƬ���������ź�
+        cnt_init : IN STD_LOGIC; --�������ü����ź�
+        clk_divide : IN STD_LOGIC; --�����Ƶʱ���ź�
+        en_cnt : IN STD_LOGIC; --�������ʹ���ź�
+        ou : OUT STD_LOGIC_VECTOR(20 DOWNTO 0) --3���������ʾ(��ҩƬ����)
     );
 END total;
 
 ARCHITECTURE func_f OF total IS
-    SIGNAL tmp1 : STD_LOGIC_VECTOR(3 DOWNTO 0); --百位
-    SIGNAL tmp2 : STD_LOGIC_VECTOR(3 DOWNTO 0); --十位
-    SIGNAL tmp3 : STD_LOGIC_VECTOR(3 DOWNTO 0); --个位
+    SIGNAL tmp1 : STD_LOGIC_VECTOR(3 DOWNTO 0); --��λ
+    SIGNAL tmp2 : STD_LOGIC_VECTOR(3 DOWNTO 0); --ʮλ
+    SIGNAL tmp3 : STD_LOGIC_VECTOR(3 DOWNTO 0); --��λ
     COMPONENT display IS
         PORT (
             pin : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
