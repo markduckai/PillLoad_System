@@ -74,8 +74,25 @@ en_r <= control:u4.en_red
 
 
 |PillLoad_System|divide:u1
-cl1 => ~NO_FANOUT~
-clk_divide <= comb.DB_MAX_OUTPUT_PORT_TYPE
+cl1 => clk_tmp.CLK
+cl1 => counter[0].CLK
+cl1 => counter[1].CLK
+cl1 => counter[2].CLK
+cl1 => counter[3].CLK
+cl1 => counter[4].CLK
+cl1 => counter[5].CLK
+cl1 => counter[6].CLK
+cl1 => counter[7].CLK
+cl1 => counter[8].CLK
+cl1 => counter[9].CLK
+cl1 => counter[10].CLK
+cl1 => counter[11].CLK
+cl1 => counter[12].CLK
+cl1 => counter[13].CLK
+cl1 => counter[14].CLK
+cl1 => counter[15].CLK
+cl1 => counter[16].CLK
+clk_divide <= clk_tmp.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |PillLoad_System|single_cnt:u2

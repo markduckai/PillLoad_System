@@ -11,17 +11,19 @@ ENTITY divide IS
 END divide;
 
 ARCHITECTURE fuc_d OF divide IS
-    signal counter : integer range 0 to 99999 := 0;
-    signal div : integer := 1000;
+    SIGNAL counter : INTEGER RANGE 0 TO 99999 := 0;
+    SIGNAL div : INTEGER := 1000;
+    SIGNAL clk_tmp : STD_LOGIC;
 BEGIN
-process(cl1)
-    begin
-        if rising_edge(cl1) then
+    PROCESS (cl1)
+    BEGIN
+        IF rising_edge(cl1) THEN
             counter <= counter + 1;
-            if counter = div then
+            IF counter = div THEN
                 counter <= 0;
-                clk_divide <= not clk_divide;
-            end if;
-        end if;
-    end process;
+                clk_tmp <= NOT clk_tmp;
+            END IF;
+        END IF;
+    END PROCESS;
+    clk_divide <= clk_tmp;
 END fuc_d;

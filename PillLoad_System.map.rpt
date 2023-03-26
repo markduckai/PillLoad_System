@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PillLoad_System
-Sun Mar 26 21:26:48 2023
+Sun Mar 26 21:35:11 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-------------------------------+------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sun Mar 26 21:26:48 2023    ;
+; Analysis & Synthesis Status   ; Successful - Sun Mar 26 21:35:11 2023    ;
 ; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name                 ; PillLoad_System                          ;
 ; Top-level Entity Name         ; PillLoad_System                          ;
@@ -216,17 +216,17 @@ applicable agreement for further details.
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                            ;
-+----------------------------------------+--------------------------------------+
-; Register name                          ; Reason for Removal                   ;
-+----------------------------------------+--------------------------------------+
-; total:u3|tmp3[0]                       ; Stuck at GND due to stuck port clock ;
-; total:u3|tmp1[0..3]                    ; Stuck at GND due to stuck port clock ;
-; total:u3|tmp2[0..3]                    ; Stuck at GND due to stuck port clock ;
-; total:u3|tmp3[1..3]                    ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 12 ;                                      ;
-+----------------------------------------+--------------------------------------+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; total:u3|tmp3[0]                       ; Stuck at GND due to stuck port clock_enable ;
+; total:u3|tmp2[0..3]                    ; Stuck at GND due to stuck port clock_enable ;
+; total:u3|tmp3[1..3]                    ; Stuck at GND due to stuck port clock_enable ;
+; total:u3|tmp1[0..3]                    ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 12 ;                                             ;
++----------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -250,7 +250,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sun Mar 26 21:26:47 2023
+    Info: Processing started: Sun Mar 26 21:35:10 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PillLoad_System -c PillLoad_System
 Info: Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info: Found 2 design units, including 1 entities, in source file pillload_system.vhd
@@ -262,7 +262,7 @@ Warning: Using design file divide.vhd, which is not specified as a design file f
     Info: Found design unit 1: divide-fuc_d
     Info: Found entity 1: divide
 Info: Elaborating entity "divide" for hierarchy "divide:u1"
-Warning (10541): VHDL Signal Declaration warning at divide.vhd(9): used implicit default value for signal "clk_divide" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at divide.vhd(15): used explicit default value for signal "div" because signal was never assigned a value
 Warning: Using design file single_cnt.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: single_cnt-func_s
     Info: Found entity 1: single_cnt
@@ -395,7 +395,7 @@ Info: Implemented 71 device resources after synthesis - the final resource count
     Info: Implemented 51 output pins
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 105 warnings
     Info: Peak virtual memory: 243 megabytes
-    Info: Processing ended: Sun Mar 26 21:26:48 2023
+    Info: Processing ended: Sun Mar 26 21:35:11 2023
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 

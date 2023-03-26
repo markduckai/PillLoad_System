@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for PillLoad_System
-Sun Mar 26 21:26:54 2023
+Sun Mar 26 21:35:17 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -87,13 +87,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sun Mar 26 21:26:54 2023
+    Info: Processing started: Sun Mar 26 21:35:17 2023
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off PillLoad_System -c PillLoad_System --timing_analysis_only
 Info: Parallel compilation is enabled and will use 16 of the 16 processors detected
 Warning: No paths found for timing analysis
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 191 megabytes
-    Info: Processing ended: Sun Mar 26 21:26:54 2023
+    Info: Peak virtual memory: 190 megabytes
+    Info: Processing ended: Sun Mar 26 21:35:17 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

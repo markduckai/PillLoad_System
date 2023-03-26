@@ -53,39 +53,6 @@ a36c8ec425c8a2589af98b2d4daabc3
 
 # end
 # entity
-divide
-# storage
-db|PillLoad_System.(1).cnf
-db|PillLoad_System.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-divide.vhd
-37afaea68966fccc5d2c6c83a77e6bc
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-divide:u1
-}
-# lmf
-c:|altera|91|quartus|lmf|maxplus2.lmf
-a36c8ec425c8a2589af98b2d4daabc3
-# macro_sequence
-
-# end
-# entity
 single_cnt
 # storage
 db|PillLoad_System.(2).cnf
@@ -283,6 +250,39 @@ USR
 }
 # hierarchies {
 count:u5
+}
+# lmf
+c:|altera|91|quartus|lmf|maxplus2.lmf
+a36c8ec425c8a2589af98b2d4daabc3
+# macro_sequence
+
+# end
+# entity
+divide
+# storage
+db|PillLoad_System.(1).cnf
+db|PillLoad_System.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+divide.vhd
+69c82f13f1b1e6e64fc6379fd3b8575e
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+divide:u1
 }
 # lmf
 c:|altera|91|quartus|lmf|maxplus2.lmf
