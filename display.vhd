@@ -1,4 +1,4 @@
-LIBRARY IEEE; 
+LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
@@ -24,6 +24,7 @@ BEGIN
             WHEN "0111" => pout <= "0000111";
             WHEN "1000" => pout <= "1111111";
             WHEN "1001" => pout <= "1101111";
+            WHEN OTHERS => pout <= "0000000";
         END CASE;
     END PROCESS;
 END func;

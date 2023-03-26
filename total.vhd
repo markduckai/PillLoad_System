@@ -47,5 +47,5 @@ BEGIN
     END PROCESS;
     u1 : display PORT MAP(tmp1, ou(20 DOWNTO 14));
     u2 : display PORT MAP(tmp2, ou(13 DOWNTO 7));
-    u3 : displat PORT MAP(tmp3, ou(6 DOWNTO 0));
+    u3 : display PORT MAP(tmp3, ou(6 DOWNTO 0));
 END func_f;

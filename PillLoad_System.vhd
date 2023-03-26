@@ -51,7 +51,7 @@ ARCHITECTURE func OF PillLoad_System IS
             judge : IN STD_LOGIC; --判断装瓶量是否超过最大瓶数
             en_cnt : OUT STD_LOGIC; --输出计数使能信号
             en_green : OUT STD_LOGIC; --绿灯显示信号
-            en_red : OUT STD_LOGIC; --红灯显示信号
+            en_red : OUT STD_LOGIC --红灯显示信号
             --方波闪烁报警
         );
     END COMPONENT;
@@ -59,16 +59,16 @@ ARCHITECTURE func OF PillLoad_System IS
         PORT (
             ci : IN STD_LOGIC; --进位信号
             pin : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --最大装瓶量BCD码输入
-            judge : OUT STD_LOGIC : --判断装瓶量是否超过最大瓶数
+            judge : OUT STD_LOGIC; --判断装瓶量是否超过最大瓶数
             ou : OUT STD_LOGIC_VECTOR(13 DOWNTO 0) --2个数码管显示(装瓶数)
         );
     END COMPONENT;
+    SIGNAL clk_divide, en_cnt, ci, judge : STD_LOGIC;
+    SIGNAL en_green, en_red : STD_LOGIC;
+    SIGNAL out1 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+    SIGNAL out2 : STD_LOGIC_VECTOR(20 DOWNTO 0);
+    SIGNAL out3 : STD_LOGIC_VECTOR(13 DOWNTO 0);
 BEGIN
-    SIGNAL clk_divide, en_cnt, ci, judge STD_LOGIC;
-    SIGNAL en_green, en_red;
-    SIGNAL out1 STD_LOGIC_VECTOR(13 DOWNTO 0);
-    SIGNAL out2 STD_LOGIC_VECTOR(20 DOWNTO 0);
-    SIGNAL out3 STD_LOGIC_VECTOR(13 DOWNTO 0);
     u1 : divide PORT MAP(clk, clk_divide);
     u2 : single_cnt PORT MAP(cnt_init, clk_divide, en_cnt, pin1, clr1, ci, out1);
     u3 : total PORT MAP(clr2, cnt_init, clk_divide, en_cnt, out2);
