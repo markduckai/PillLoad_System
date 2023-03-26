@@ -31,8 +31,9 @@ BEGIN
             tmp1 <= "0000";
             tmp2 <= "0000";
             tmp3 <= "0000";
-        ELSIF (en_cnt = '1' AND cn_init = '0') THEN
-            IF (clk'event AND clk = '1') THEN
+        ELSIF (en_cnt = '1' AND cnt_init = '1') THEN
+            IF (clk_divide'event AND clk_divide = '1') THEN
+                tmp3 <= tmp3 + 1;
                 IF (tmp3 = "1010") THEN
                     tmp3 <= "0000";
                     tmp2 <= tmp2 + 1;

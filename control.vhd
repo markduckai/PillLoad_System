@@ -14,6 +14,21 @@ ENTITY control IS
 END control;
 
 ARCHITECTURE func_co OF control IS
+    SIGNAL tmp_cnt, tmp_green, tmp_red : STD_LOGIC;
 BEGIN
-
+    PROCESS (judge)
+    BEGIN
+        IF (judge = '1')
+            tmp_cnt <= '1';
+            tmp_green <= '1';
+            tmp_red <= '0';
+        ELSE
+            tmp_cnt <= '0';
+            tmp_green <= '0';
+            tmp_red <= '1';
+        END IF;
+    END PROCESS;
+    en_cnt <= tmp_cnt;
+    en_green <= tmp_green;
+    en_red <= tmp_red;
 END func_co;

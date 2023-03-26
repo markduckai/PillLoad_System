@@ -5,7 +5,7 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY single_cnt IS
     PORT (
-        cnt_intit : IN STD_LOGIC; --输入启用计数信号
+        cnt_init : IN STD_LOGIC; --输入启用计数信号
         clk_divide : IN STD_LOGIC; -- 输入分频时钟信号
         en_cnt : IN STD_LOGIC; --输入计数使能信号
         pin : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --每瓶药片的BCD码输入
