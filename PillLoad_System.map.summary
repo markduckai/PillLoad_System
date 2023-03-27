@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Sun Mar 26 21:35:11 2023
+Analysis & Synthesis Status : Successful - Mon Mar 27 14:36:55 2023
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : PillLoad_System
 Top-level Entity Name : PillLoad_System
 Family : Stratix II
 Logic utilization : N/A
-    Combinational ALUTs : 0
-    Dedicated logic registers : 0
-Total registers : 0
+    Combinational ALUTs : 118
+    Dedicated logic registers : 48
+Total registers : 48
 Total pins : 71
 Total virtual pins : 0
 Total block memory bits : 0

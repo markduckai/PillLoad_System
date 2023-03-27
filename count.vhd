@@ -2,6 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
+USE ieee.numeric_std.ALL;
 
 ENTITY count IS
     PORT (
@@ -13,9 +14,10 @@ ENTITY count IS
 END count;
 
 ARCHITECTURE func_count OF count IS
-    SIGNAL tmp : STD_LOGIC_VECTOR(7 DOWNTO 0);
-    SIGNAL tmp_j : STD_LOGIC;
-    SIGNAL tmp_o : STD_LOGIC_VECTOR(13 DOWNTO 0);
+    SIGNAL tmpa : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL tmpb : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL tmp_j : STD_LOGIC := '0';
+    SIGNAL tmp_o : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
     COMPONENT display IS
         PORT (
             pin : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -25,18 +27,22 @@ ARCHITECTURE func_count OF count IS
 BEGIN
     PROCESS (ci, pin)
     BEGIN
-        IF (ci = '1') THEN
-            IF (tmp = pin) THEN
-                tmp <= "00000000";
-                tmp_j <= '1';
-            ELSE
-                tmp <= tmp + 1;
-                tmp_j <= '0';
+        IF (rising_edge(ci)) THEN
+            IF (tmp_j = '0') THEN
+                IF (tmpb = "1001") THEN
+                    tmpb <= "0000";
+                    tmpa <= tmpa + 1;
+                ELSE
+                    tmpb <= tmpb + 1;
+                END IF;
+                IF (tmpa = pin(7 DOWNTO 4) AND tmpb = pin(3 DOWNTO 0)) THEN
+                    tmp_j <= '1';
+                END IF;
             END IF;
         END IF;
     END PROCESS;
     judge <= tmp_j;
-    u1 : display PORT MAP(tmp(3 DOWNTO 0), tmp_o(6 DOWNTO 0));
-    u2 : display PORT MAP(tmp(7 DOWNTO 4), tmp_o(13 DOWNTO 7));
+    u1 : display PORT MAP(tmpb, tmp_o(6 DOWNTO 0));
+    u2 : display PORT MAP(tmpa, tmp_o(13 DOWNTO 7));
     ou <= tmp_o;
 END func_count;

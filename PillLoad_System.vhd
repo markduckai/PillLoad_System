@@ -63,11 +63,12 @@ ARCHITECTURE func OF PillLoad_System IS
             ou : OUT STD_LOGIC_VECTOR(13 DOWNTO 0) --2个数码管显示(装瓶数)
         );
     END COMPONENT;
-    SIGNAL clk_divide, en_cnt, ci, judge : STD_LOGIC;
-    SIGNAL en_green, en_red : STD_LOGIC;
-    SIGNAL out1 : STD_LOGIC_VECTOR(13 DOWNTO 0);
-    SIGNAL out2 : STD_LOGIC_VECTOR(20 DOWNTO 0);
-    SIGNAL out3 : STD_LOGIC_VECTOR(13 DOWNTO 0);
+    SIGNAL clk_divide, ci, judge : STD_LOGIC := '0';
+    SIGNAL en_cnt : STD_LOGIC := '1';
+    SIGNAL en_green, en_red : STD_LOGIC := '0';
+    SIGNAL out1 : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL out2 : STD_LOGIC_VECTOR(20 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL out3 : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
 BEGIN
     u1 : divide PORT MAP(clk, clk_divide);
     u2 : single_cnt PORT MAP(cnt_init, clk_divide, en_cnt, pin1, clr1, ci, out1);

@@ -14,9 +14,10 @@ ENTITY total IS
 END total;
 
 ARCHITECTURE func_f OF total IS
-    SIGNAL tmp1 : STD_LOGIC_VECTOR(3 DOWNTO 0); --百位
-    SIGNAL tmp2 : STD_LOGIC_VECTOR(3 DOWNTO 0); --十位
-    SIGNAL tmp3 : STD_LOGIC_VECTOR(3 DOWNTO 0); --个位
+    SIGNAL tmp1 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); --百位
+    SIGNAL tmp2 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); --十位
+    SIGNAL tmp3 : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0'); --个位
+    SIGNAL tmpo : STD_LOGIC_VECTOR(20 DOWNTO 0) := (OTHERS => '0');
     COMPONENT display IS
         PORT (
             pin : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
@@ -45,7 +46,8 @@ BEGIN
             END IF;
         END IF;
     END PROCESS;
-    u1 : display PORT MAP(tmp1, ou(20 DOWNTO 14));
-    u2 : display PORT MAP(tmp2, ou(13 DOWNTO 7));
-    u3 : display PORT MAP(tmp3, ou(6 DOWNTO 0));
+    u1 : display PORT MAP(tmp1, tmpo(20 DOWNTO 14));
+    u2 : display PORT MAP(tmp2, tmpo(13 DOWNTO 7));
+    u3 : display PORT MAP(tmp3, tmpo(6 DOWNTO 0));
+    ou <= tmpo;
 END func_f;

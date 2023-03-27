@@ -14,7 +14,7 @@ ENTITY control IS
 END control;
 
 ARCHITECTURE func_co OF control IS
-    SIGNAL tmp_cnt, tmp_green, tmp_red : STD_LOGIC;
+    SIGNAL tmp_cnt, tmp_green, tmp_red : STD_LOGIC := '0';
 BEGIN
     PROCESS (judge)
     BEGIN

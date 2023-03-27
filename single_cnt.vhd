@@ -16,6 +16,42 @@ ENTITY single_cnt IS
 END single_cnt;
 
 ARCHITECTURE func_s OF single_cnt IS
+    SIGNAL tmpa : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL tmpb : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL tmpo : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL tmp_ci : STD_LOGIC := '0';
+    COMPONENT display IS
+        PORT (
+            pin : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+            pout : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        );
+    END COMPONENT;
 BEGIN
-
+    PROCESS (cnt_init, clk_divide, en_cnt, pin, clr)
+    BEGIN
+        IF (clr = '1') THEN
+            tmpa <= "0000";
+            tmpb <= "0000";
+        ELSIF (rising_edge(clk_divide)) THEN
+            IF (cnt_init = '1' AND en_cnt = '1') THEN
+                IF (tmpb = "1001") THEN
+                    tmpb <= "0000";
+                    tmpa <= tmpa + 1;
+                ELSE
+                    tmpb <= tmpb + 1;
+                END IF;
+                IF (tmpa = pin(7 DOWNTO 4) AND tmpb = pin(3 DOWNTO 0)) THEN
+                    tmpa <= "0000";
+                    tmpb <= "0000";
+                    tmp_ci <= '1';
+                ELSE
+                    tmp_ci <= '0';
+                END IF;
+            END IF;
+        END IF;
+    END PROCESS;
+    u1 : display PORT MAP(tmpa, tmpo(13 DOWNTO 7));
+    u2 : display PORT MAP(tmpb, tmpo(6 DOWNTO 0));
+    ou <= tmpo;
+    ci <= tmp_ci;
 END func_s;

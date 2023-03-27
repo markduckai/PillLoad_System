@@ -1,5 +1,5 @@
 Assembler report for PillLoad_System
-Sun Mar 26 21:35:16 2023
+Mon Mar 27 14:37:02 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Mar 26 21:35:16 2023 ;
+; Assembler Status      ; Successful - Mon Mar 27 14:37:02 2023 ;
 ; Revision Name         ; PillLoad_System                       ;
 ; Top-level Entity Name ; PillLoad_System                       ;
 ; Family                ; Stratix II                            ;
@@ -96,7 +96,7 @@ applicable agreement for further details.
 +----------------+------------------------------------------------------+
 ; Device         ; EP2S15F484C3                                         ;
 ; JTAG usercode  ; 0xFFFFFFFF                                           ;
-; Checksum       ; 0x00275FE0                                           ;
+; Checksum       ; 0x0029373B                                           ;
 +----------------+------------------------------------------------------+
 
 
@@ -107,7 +107,7 @@ applicable agreement for further details.
 +--------------------+--------------------------------------------------+
 ; Device             ; EPC16                                            ;
 ; JTAG usercode      ; 0xFFFFFFFF                                       ;
-; Checksum           ; 0x1EF684EA                                       ;
+; Checksum           ; 0x1EEECE38                                       ;
 ; Compression Ratio  ; 3                                                ;
 +--------------------+--------------------------------------------------+
 
@@ -118,14 +118,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Sun Mar 26 21:35:15 2023
+    Info: Processing started: Mon Mar 27 14:37:01 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off PillLoad_System -c PillLoad_System
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 247 megabytes
-    Info: Processing ended: Sun Mar 26 21:35:16 2023
+    Info: Processing ended: Mon Mar 27 14:37:02 2023
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 
