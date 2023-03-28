@@ -9,11 +9,11 @@ ENTITY PillLoad_System IS
         clr1 : IN STD_LOGIC; --输入单瓶药片清零信号
         clr2 : IN STD_LOGIC; --输入药片总量清零信号
         cnt_init : IN STD_LOGIC; --输入启用计数信号
+        mode : IN STD_LOGIC; --输出显示信号(1输出每瓶药片数目，0输出装瓶数显示)
         pin1 : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --每瓶药片的BCD码输入
         pin2 : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --最大装瓶量的BCD码输入
-        o1 : OUT STD_LOGIC_VECTOR(13 DOWNTO 0); --每瓶药片数目显示
-        o2 : OUT STD_LOGIC_VECTOR(20 DOWNTO 0); --总药片数量显示
-        o3 : OUT STD_LOGIC_VECTOR(13 DOWNTO 0); --装瓶数显示
+        o1 : OUT STD_LOGIC_VECTOR(7 DOWNTO 0); --每瓶药片数目显示
+        o2 : OUT STD_LOGIC_VECTOR(14 DOWNTO 0); --总药片数量显示
         en_g : OUT STD_LOGIC; --绿灯显示信号
         en_r : OUT STD_LOGIC --红灯显示信号
     );
@@ -34,7 +34,7 @@ ARCHITECTURE func OF PillLoad_System IS
             pin : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --每瓶药片的BCD码输入
             clr : IN STD_LOGIC; --单瓶药片清零信号
             ci : OUT STD_LOGIC; --进位信号
-            ou : OUT STD_LOGIC_VECTOR(13 DOWNTO 0) --2个数码管显示(每瓶药片数目)
+            ou : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) --2个数码管显示(每瓶药片数目)
         );
     END COMPONENT;
     COMPONENT total IS --药片总量计数器
@@ -43,7 +43,7 @@ ARCHITECTURE func OF PillLoad_System IS
             cnt_init : IN STD_LOGIC; --输入启用计数信号
             clk_divide : IN STD_LOGIC; --输入分频时钟信号
             en_cnt : IN STD_LOGIC; --输入计数使能信号
-            ou : OUT STD_LOGIC_VECTOR(20 DOWNTO 0) --3个数码管显示(总药片数量)
+            ou : OUT STD_LOGIC_VECTOR(14 DOWNTO 0) --3个数码管显示(总药片数量)
         );
     END COMPONENT;
     COMPONENT control IS
@@ -60,15 +60,15 @@ ARCHITECTURE func OF PillLoad_System IS
             ci : IN STD_LOGIC; --进位信号
             pin : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --最大装瓶量BCD码输入
             judge : OUT STD_LOGIC; --判断装瓶量是否超过最大瓶数
-            ou : OUT STD_LOGIC_VECTOR(13 DOWNTO 0) --2个数码管显示(装瓶数)
+            ou : OUT STD_LOGIC_VECTOR(7 DOWNTO 0) --2个数码管显示(装瓶数)
         );
     END COMPONENT;
     SIGNAL clk_divide, ci, judge : STD_LOGIC := '0';
     SIGNAL en_cnt : STD_LOGIC := '1';
     SIGNAL en_green, en_red : STD_LOGIC := '0';
-    SIGNAL out1 : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL out2 : STD_LOGIC_VECTOR(20 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL out3 : STD_LOGIC_VECTOR(13 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL out1 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL out2 : STD_LOGIC_VECTOR(14 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL out3 : STD_LOGIC_VECTOR(7 DOWNTO 0) := (OTHERS => '0');
 BEGIN
     u1 : divide PORT MAP(clk, clk_divide);
     u2 : single_cnt PORT MAP(cnt_init, clk_divide, en_cnt, pin1, clr1, ci, out1);
@@ -77,7 +77,7 @@ BEGIN
     u5 : count PORT MAP(ci, pin2, judge, out3);
     en_g <= en_green;
     en_r <= en_red;
-    o1 <= out1;
+    o1 <= out1 WHEN mode = '1' ELSE
+        out3;
     o2 <= out2;
-    o3 <= out3;
 END func;

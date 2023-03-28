@@ -18,11 +18,11 @@ ARCHITECTURE func_co OF control IS
 BEGIN
     PROCESS (judge)
     BEGIN
-        IF (judge = '1') THEN
+        IF (judge = '0') THEN --没超过最大瓶数时使能有效，绿灯亮，红灯灭
             tmp_cnt <= '1';
             tmp_green <= '1';
             tmp_red <= '0';
-        ELSE
+        ELSE --超过时使能无效，绿灯灭，红灯亮
             tmp_cnt <= '0';
             tmp_green <= '0';
             tmp_red <= '1';

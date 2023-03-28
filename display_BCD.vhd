@@ -1,0 +1,15 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+ENTITY display_BCD IS
+    PORT (
+        pin : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
+        pout : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+    );
+END display_BCD;
+
+ARCHITECTURE func OF display_BCD IS
+BEGIN
+    pout <= pin;
+END func;

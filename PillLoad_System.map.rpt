@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PillLoad_System
-Mon Mar 27 14:36:55 2023
+Tue Mar 28 15:00:13 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -13,9 +13,19 @@ Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Analysis & Synthesis Messages
+  8. Source assignments for count:u5|lpm_counter:tmpa_rtl_0
+  9. Source assignments for single_cnt:u2|lpm_counter:tmpa_rtl_1
+ 10. Source assignments for total:u3|lpm_counter:tmp2_rtl_2
+ 11. Source assignments for total:u3|lpm_counter:tmp1_rtl_3
+ 12. Source assignments for divide:u1|lpm_add_sub:Add0|addcore:adder[2]
+ 13. Source assignments for divide:u1|lpm_add_sub:Add0|addcore:adder[1]
+ 14. Source assignments for divide:u1|lpm_add_sub:Add0|addcore:adder[0]
+ 15. Parameter Settings for Inferred Entity Instance: count:u5|lpm_counter:tmpa_rtl_0
+ 16. Parameter Settings for Inferred Entity Instance: single_cnt:u2|lpm_counter:tmpa_rtl_1
+ 17. Parameter Settings for Inferred Entity Instance: total:u3|lpm_counter:tmp2_rtl_2
+ 18. Parameter Settings for Inferred Entity Instance: total:u3|lpm_counter:tmp1_rtl_3
+ 19. Parameter Settings for Inferred Entity Instance: divide:u1|lpm_add_sub:Add0
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -38,105 +48,76 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                             ;
-+-------------------------------+------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Mon Mar 27 14:36:55 2023    ;
-; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Full Version ;
-; Revision Name                 ; PillLoad_System                          ;
-; Top-level Entity Name         ; PillLoad_System                          ;
-; Family                        ; Stratix II                               ;
-; Logic utilization             ; N/A                                      ;
-;     Combinational ALUTs       ; 118                                      ;
-;     Dedicated logic registers ; 48                                       ;
-; Total registers               ; 48                                       ;
-; Total pins                    ; 71                                       ;
-; Total virtual pins            ; 0                                        ;
-; Total block memory bits       ; 0                                        ;
-; DSP block 9-bit elements      ; 0                                        ;
-; Total PLLs                    ; 0                                        ;
-; Total DLLs                    ; 0                                        ;
-+-------------------------------+------------------------------------------+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                           ;
++-----------------------------+------------------------------------------+
+; Analysis & Synthesis Status ; Successful - Tue Mar 28 15:00:13 2023    ;
+; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name               ; PillLoad_System                          ;
+; Top-level Entity Name       ; PillLoad_System                          ;
+; Family                      ; MAX7000S                                 ;
+; Total macrocells            ; 74                                       ;
+; Total pins                  ; 46                                       ;
++-----------------------------+------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                        ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Option                                                                     ; Setting            ; Default Value      ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; PillLoad_System    ; PillLoad_System    ;
-; Family name                                                                ; Stratix II         ; Stratix II         ;
-; Use Generated Physical Constraints File                                    ; Off                ;                    ;
-; Use smart compilation                                                      ; Off                ; Off                ;
-; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
-; Enable compact report table                                                ; Off                ; Off                ;
-; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
-; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
-; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
-; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
-; State Machine Processing                                                   ; Auto               ; Auto               ;
-; Safe State Machine                                                         ; Off                ; Off                ;
-; Extract Verilog State Machines                                             ; On                 ; On                 ;
-; Extract VHDL State Machines                                                ; On                 ; On                 ;
-; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
-; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
-; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Parallel Synthesis                                                         ; On                 ; On                 ;
-; DSP Block Balancing                                                        ; Auto               ; Auto               ;
-; NOT Gate Push-Back                                                         ; On                 ; On                 ;
-; Power-Up Don't Care                                                        ; On                 ; On                 ;
-; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
-; Remove Duplicate Registers                                                 ; On                 ; On                 ;
-; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
-; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
-; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
-; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
-; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
-; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
-; Carry Chain Length                                                         ; 70                 ; 70                 ;
-; Auto Carry Chains                                                          ; On                 ; On                 ;
-; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
-; Auto ROM Replacement                                                       ; On                 ; On                 ;
-; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
-; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
-; Strict RAM Replacement                                                     ; Off                ; Off                ;
-; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
-; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
-; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
-; Auto Resource Sharing                                                      ; Off                ; Off                ;
-; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
-; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
-; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
-; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
-; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
-; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
-; HDL message level                                                          ; Level2             ; Level2             ;
-; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                   ; 100                ; 100                ;
-; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
-; Clock MUX Protection                                                       ; On                 ; On                 ;
-; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
-; Block Design Naming                                                        ; Auto               ; Auto               ;
-; SDC constraint protection                                                  ; Off                ; Off                ;
-; Synthesis Effort                                                           ; Auto               ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
-; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-+----------------------------------------------------------------------------+--------------------+--------------------+
++----------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                  ;
++----------------------------------------------------------------------------+-----------------+-----------------+
+; Option                                                                     ; Setting         ; Default Value   ;
++----------------------------------------------------------------------------+-----------------+-----------------+
+; Device                                                                     ; EPM7128SLC84-15 ;                 ;
+; Top-level entity name                                                      ; PillLoad_System ; PillLoad_System ;
+; Family name                                                                ; MAX7000S        ; Stratix II      ;
+; Use Generated Physical Constraints File                                    ; Off             ;                 ;
+; Use smart compilation                                                      ; Off             ; Off             ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On              ;
+; Enable compact report table                                                ; Off             ; Off             ;
+; Create Debugging Nodes for IP Cores                                        ; Off             ; Off             ;
+; Preserve fewer node names                                                  ; On              ; On              ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off             ; Off             ;
+; Verilog Version                                                            ; Verilog_2001    ; Verilog_2001    ;
+; VHDL Version                                                               ; VHDL_1993       ; VHDL_1993       ;
+; State Machine Processing                                                   ; Auto            ; Auto            ;
+; Safe State Machine                                                         ; Off             ; Off             ;
+; Extract Verilog State Machines                                             ; On              ; On              ;
+; Extract VHDL State Machines                                                ; On              ; On              ;
+; Ignore Verilog initial constructs                                          ; Off             ; Off             ;
+; Iteration limit for constant Verilog loops                                 ; 5000            ; 5000            ;
+; Iteration limit for non-constant Verilog loops                             ; 250             ; 250             ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On              ; On              ;
+; Parallel Synthesis                                                         ; On              ; On              ;
+; NOT Gate Push-Back                                                         ; On              ; On              ;
+; Power-Up Don't Care                                                        ; On              ; On              ;
+; Remove Duplicate Registers                                                 ; On              ; On              ;
+; Ignore CARRY Buffers                                                       ; Off             ; Off             ;
+; Ignore CASCADE Buffers                                                     ; Off             ; Off             ;
+; Ignore GLOBAL Buffers                                                      ; Off             ; Off             ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off             ; Off             ;
+; Ignore LCELL Buffers                                                       ; Auto            ; Auto            ;
+; Ignore SOFT Buffers                                                        ; Off             ; Off             ;
+; Limit AHDL Integers to 32 Bits                                             ; Off             ; Off             ;
+; Optimization Technique                                                     ; Speed           ; Speed           ;
+; Allow XOR Gate Usage                                                       ; On              ; On              ;
+; Auto Logic Cell Insertion                                                  ; On              ; On              ;
+; Parallel Expander Chain Length                                             ; 4               ; 4               ;
+; Auto Parallel Expanders                                                    ; On              ; On              ;
+; Auto Open-Drain Pins                                                       ; On              ; On              ;
+; Auto Resource Sharing                                                      ; Off             ; Off             ;
+; Maximum Fan-in Per Macrocell                                               ; 100             ; 100             ;
+; Use LogicLock Constraints during Resource Balancing                        ; On              ; On              ;
+; Ignore translate_off and synthesis_off directives                          ; Off             ; Off             ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On              ; On              ;
+; HDL message level                                                          ; Level2          ; Level2          ;
+; Suppress Register Optimization Related Messages                            ; Off             ; Off             ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 100             ; 100             ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100             ; 100             ;
+; Block Design Naming                                                        ; Auto            ; Auto            ;
+; Synthesis Effort                                                           ; Auto            ; Auto            ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On              ; On              ;
+; Analysis & Synthesis Message Level                                         ; Medium          ; Medium          ;
+; Disable Register Merging Across Hierarchies                                ; Auto            ; Auto            ;
++----------------------------------------------------------------------------+-----------------+-----------------+
 
 
 +------------------------------------------+
@@ -156,104 +137,268 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                   ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------+
-; PillLoad_System.vhd              ; yes             ; User VHDL File        ; D:/VHDL/PillLoad_System/PillLoad_System.vhd ;
-; divide.vhd                       ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/divide.vhd          ;
-; single_cnt.vhd                   ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/single_cnt.vhd      ;
-; display.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/display.vhd         ;
-; total.vhd                        ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/total.vhd           ;
-; control.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/control.vhd         ;
-; count.vhd                        ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/count.vhd           ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                    ;
++----------------------------------+-----------------+-----------------------+--------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                 ;
++----------------------------------+-----------------+-----------------------+--------------------------------------------------------------+
+; PillLoad_System.vhd              ; yes             ; User VHDL File        ; D:/VHDL/PillLoad_System/PillLoad_System.vhd                  ;
+; divide.vhd                       ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/divide.vhd                           ;
+; single_cnt.vhd                   ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/single_cnt.vhd                       ;
+; display_bcd.vhd                  ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/display_bcd.vhd                      ;
+; total.vhd                        ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/total.vhd                            ;
+; display.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/display.vhd                          ;
+; control.vhd                      ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/control.vhd                          ;
+; count.vhd                        ; yes             ; Auto-Found VHDL File  ; D:/VHDL/PillLoad_System/count.vhd                            ;
+; lpm_counter.tdf                  ; yes             ; Megafunction          ; c:/altera/91/quartus/libraries/megafunctions/lpm_counter.tdf ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction          ; c:/altera/91/quartus/libraries/megafunctions/lpm_add_sub.tdf ;
+; addcore.tdf                      ; yes             ; Megafunction          ; c:/altera/91/quartus/libraries/megafunctions/addcore.tdf     ;
+; a_csnbuffer.tdf                  ; yes             ; Megafunction          ; c:/altera/91/quartus/libraries/megafunctions/a_csnbuffer.tdf ;
+; look_add.tdf                     ; yes             ; Megafunction          ; c:/altera/91/quartus/libraries/megafunctions/look_add.tdf    ;
+; altshift.tdf                     ; yes             ; Megafunction          ; c:/altera/91/quartus/libraries/megafunctions/altshift.tdf    ;
++----------------------------------+-----------------+-----------------------+--------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                       ;
-+-----------------------------------------------+-------------------+
-; Resource                                      ; Usage             ;
-+-----------------------------------------------+-------------------+
-; Estimated ALUTs Used                          ; 118               ;
-; Dedicated logic registers                     ; 48                ;
-;                                               ;                   ;
-; Estimated ALUTs Unavailable                   ; 10                ;
-;                                               ;                   ;
-; Total combinational functions                 ; 118               ;
-; Combinational ALUT usage by number of inputs  ;                   ;
-;     -- 7 input functions                      ; 0                 ;
-;     -- 6 input functions                      ; 10                ;
-;     -- 5 input functions                      ; 7                 ;
-;     -- 4 input functions                      ; 68                ;
-;     -- <=3 input functions                    ; 33                ;
-;                                               ;                   ;
-; Combinational ALUTs by mode                   ;                   ;
-;     -- normal mode                            ; 93                ;
-;     -- extended LUT mode                      ; 0                 ;
-;     -- arithmetic mode                        ; 25                ;
-;     -- shared arithmetic mode                 ; 0                 ;
-;                                               ;                   ;
-; Estimated ALUT/register pairs used            ; 128               ;
-;                                               ;                   ;
-; Total registers                               ; 48                ;
-;     -- Dedicated logic registers              ; 48                ;
-;     -- I/O registers                          ; 0                 ;
-;                                               ;                   ;
-; Estimated ALMs:  partially or completely used ; 64                ;
-;                                               ;                   ;
-; I/O pins                                      ; 71                ;
-; Maximum fan-out node                          ; divide:u1|clk_tmp ;
-; Maximum fan-out                               ; 22                ;
-; Total fan-out                                 ; 645               ;
-; Average fan-out                               ; 2.72              ;
-+-----------------------------------------------+-------------------+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++----------------------+----------------------+
+; Resource             ; Usage                ;
++----------------------+----------------------+
+; Logic cells          ; 74                   ;
+; Total registers      ; 48                   ;
+; I/O pins             ; 46                   ;
+; Shareable expanders  ; 27                   ;
+; Parallel expanders   ; 5                    ;
+; Maximum fan-out node ; count:u5|tmp_j       ;
+; Maximum fan-out      ; 38                   ;
+; Total fan-out        ; 772                  ;
+; Average fan-out      ; 5.25                 ;
++----------------------+----------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                 ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------+--------------+
-; |PillLoad_System           ; 118 (0)           ; 48 (0)       ; 0                 ; 0            ; 0       ; 0         ; 0         ; 71   ; 0            ; |PillLoad_System                          ; work         ;
-;    |count:u5|              ; 27 (13)           ; 9 (9)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|count:u5                 ; work         ;
-;       |display:u1|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|count:u5|display:u1      ; work         ;
-;       |display:u2|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|count:u5|display:u2      ; work         ;
-;    |divide:u1|             ; 22 (22)           ; 18 (18)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|divide:u1                ;              ;
-;    |single_cnt:u2|         ; 34 (20)           ; 9 (9)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|single_cnt:u2            ; work         ;
-;       |display:u1|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|single_cnt:u2|display:u1 ; work         ;
-;       |display:u2|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|single_cnt:u2|display:u2 ;              ;
-;    |total:u3|              ; 35 (14)           ; 12 (12)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|total:u3                 ; work         ;
-;       |display:u1|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|total:u3|display:u1      ; work         ;
-;       |display:u2|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|total:u3|display:u2      ; work         ;
-;       |display:u3|         ; 7 (7)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |PillLoad_System|total:u3|display:u3      ;              ;
-+----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                       ;
++--------------------------------+------------+------+-------------------------------------------------------+--------------+
+; Compilation Hierarchy Node     ; Macrocells ; Pins ; Full Hierarchy Name                                   ; Library Name ;
++--------------------------------+------------+------+-------------------------------------------------------+--------------+
+; |PillLoad_System               ; 74         ; 46   ; |PillLoad_System                                      ; work         ;
+;    |count:u5|                  ; 10         ; 0    ; |PillLoad_System|count:u5                             ; work         ;
+;       |lpm_counter:tmpa_rtl_0| ; 4          ; 0    ; |PillLoad_System|count:u5|lpm_counter:tmpa_rtl_0      ; work         ;
+;    |divide:u1|                 ; 18         ; 0    ; |PillLoad_System|divide:u1                            ; work         ;
+;    |single_cnt:u2|             ; 18         ; 0    ; |PillLoad_System|single_cnt:u2                        ; work         ;
+;       |lpm_counter:tmpa_rtl_1| ; 8          ; 0    ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1 ; work         ;
+;    |total:u3|                  ; 20         ; 0    ; |PillLoad_System|total:u3                             ; work         ;
+;       |display:u3|             ; 7          ; 0    ; |PillLoad_System|total:u3|display:u3                  ; work         ;
+;       |lpm_counter:tmp1_rtl_3| ; 4          ; 0    ; |PillLoad_System|total:u3|lpm_counter:tmp1_rtl_3      ; work         ;
+;       |lpm_counter:tmp2_rtl_2| ; 5          ; 0    ; |PillLoad_System|total:u3|lpm_counter:tmp2_rtl_2      ; work         ;
++--------------------------------+------------+------+-------------------------------------------------------+--------------+
 
 
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 48    ;
-; Number of registers using Synchronous Clear  ; 25    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 20    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 18    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
++--------------------------------------------------------+
+; Source assignments for count:u5|lpm_counter:tmpa_rtl_0 ;
++---------------------------+-------+------+-------------+
+; Assignment                ; Value ; From ; To          ;
++---------------------------+-------+------+-------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -           ;
++---------------------------+-------+------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 3:1                ; 4 bits    ; 8 ALUTs       ; 8 ALUTs              ; 0 ALUTs                ; Yes        ; |PillLoad_System|single_cnt:u2|tmpb[2] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
++-------------------------------------------------------------+
+; Source assignments for single_cnt:u2|lpm_counter:tmpa_rtl_1 ;
++---------------------------+-------+------+------------------+
+; Assignment                ; Value ; From ; To               ;
++---------------------------+-------+------+------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -                ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -                ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -                ;
++---------------------------+-------+------+------------------+
+
+
++--------------------------------------------------------+
+; Source assignments for total:u3|lpm_counter:tmp2_rtl_2 ;
++---------------------------+-------+------+-------------+
+; Assignment                ; Value ; From ; To          ;
++---------------------------+-------+------+-------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -           ;
++---------------------------+-------+------+-------------+
+
+
++--------------------------------------------------------+
+; Source assignments for total:u3|lpm_counter:tmp1_rtl_3 ;
++---------------------------+-------+------+-------------+
+; Assignment                ; Value ; From ; To          ;
++---------------------------+-------+------+-------------+
+; SUPPRESS_DA_RULE_INTERNAL ; a101  ; -    ; -           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s102  ; -    ; -           ;
+; SUPPRESS_DA_RULE_INTERNAL ; s103  ; -    ; -           ;
++---------------------------+-------+------+-------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for divide:u1|lpm_add_sub:Add0|addcore:adder[2] ;
++---------------------------+-------+------+-------------------------+
+; Assignment                ; Value ; From ; To                      ;
++---------------------------+-------+------+-------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                       ;
++---------------------------+-------+------+-------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for divide:u1|lpm_add_sub:Add0|addcore:adder[1] ;
++---------------------------+-------+------+-------------------------+
+; Assignment                ; Value ; From ; To                      ;
++---------------------------+-------+------+-------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                       ;
++---------------------------+-------+------+-------------------------+
+
+
++--------------------------------------------------------------------+
+; Source assignments for divide:u1|lpm_add_sub:Add0|addcore:adder[0] ;
++---------------------------+-------+------+-------------------------+
+; Assignment                ; Value ; From ; To                      ;
++---------------------------+-------+------+-------------------------+
+; SUPPRESS_DA_RULE_INTERNAL ; A103  ; -    ; -                       ;
++---------------------------+-------+------+-------------------------+
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: count:u5|lpm_counter:tmpa_rtl_0 ;
++------------------------+-------------------+-------------------------------------+
+; Parameter Name         ; Value             ; Type                                ;
++------------------------+-------------------+-------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                      ;
+; LPM_WIDTH              ; 4                 ; Untyped                             ;
+; LPM_DIRECTION          ; UP                ; Untyped                             ;
+; LPM_MODULUS            ; 0                 ; Untyped                             ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                             ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                             ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                             ;
+; DEVICE_FAMILY          ; MAX7000S          ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                             ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                  ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                  ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                             ;
+; LABWIDE_SCLR           ; ON                ; Untyped                             ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                             ;
+; CBXI_PARAMETER         ; NOTHING           ; Untyped                             ;
++------------------------+-------------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: single_cnt:u2|lpm_counter:tmpa_rtl_1 ;
++------------------------+-------------------+------------------------------------------+
+; Parameter Name         ; Value             ; Type                                     ;
++------------------------+-------------------+------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                           ;
+; LPM_WIDTH              ; 4                 ; Untyped                                  ;
+; LPM_DIRECTION          ; UP                ; Untyped                                  ;
+; LPM_MODULUS            ; 0                 ; Untyped                                  ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                                  ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                                  ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                                  ;
+; DEVICE_FAMILY          ; MAX7000S          ; Untyped                                  ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                                  ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                       ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                       ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                                  ;
+; LABWIDE_SCLR           ; ON                ; Untyped                                  ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                                  ;
+; CBXI_PARAMETER         ; NOTHING           ; Untyped                                  ;
++------------------------+-------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: total:u3|lpm_counter:tmp2_rtl_2 ;
++------------------------+-------------------+-------------------------------------+
+; Parameter Name         ; Value             ; Type                                ;
++------------------------+-------------------+-------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                      ;
+; LPM_WIDTH              ; 4                 ; Untyped                             ;
+; LPM_DIRECTION          ; UP                ; Untyped                             ;
+; LPM_MODULUS            ; 0                 ; Untyped                             ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                             ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                             ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                             ;
+; DEVICE_FAMILY          ; MAX7000S          ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                             ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                  ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                  ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                             ;
+; LABWIDE_SCLR           ; ON                ; Untyped                             ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                             ;
+; CBXI_PARAMETER         ; NOTHING           ; Untyped                             ;
++------------------------+-------------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: total:u3|lpm_counter:tmp1_rtl_3 ;
++------------------------+-------------------+-------------------------------------+
+; Parameter Name         ; Value             ; Type                                ;
++------------------------+-------------------+-------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON                ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS   ; OFF               ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS    ; ON                ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS ; OFF               ; IGNORE_CASCADE                      ;
+; LPM_WIDTH              ; 4                 ; Untyped                             ;
+; LPM_DIRECTION          ; UP                ; Untyped                             ;
+; LPM_MODULUS            ; 0                 ; Untyped                             ;
+; LPM_AVALUE             ; UNUSED            ; Untyped                             ;
+; LPM_SVALUE             ; UNUSED            ; Untyped                             ;
+; LPM_PORT_UPDOWN        ; PORT_CONNECTIVITY ; Untyped                             ;
+; DEVICE_FAMILY          ; MAX7000S          ; Untyped                             ;
+; CARRY_CHAIN            ; MANUAL            ; Untyped                             ;
+; CARRY_CHAIN_LENGTH     ; 48                ; CARRY_CHAIN_LENGTH                  ;
+; NOT_GATE_PUSH_BACK     ; ON                ; NOT_GATE_PUSH_BACK                  ;
+; CARRY_CNT_EN           ; SMART             ; Untyped                             ;
+; LABWIDE_SCLR           ; ON                ; Untyped                             ;
+; USE_NEW_VERSION        ; TRUE              ; Untyped                             ;
+; CBXI_PARAMETER         ; NOTHING           ; Untyped                             ;
++------------------------+-------------------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: divide:u1|lpm_add_sub:Add0 ;
++------------------------+-------------+--------------------------------------+
+; Parameter Name         ; Value       ; Type                                 ;
++------------------------+-------------+--------------------------------------+
+; LPM_WIDTH              ; 17          ; Untyped                              ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                              ;
+; LPM_DIRECTION          ; ADD         ; Untyped                              ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                              ;
+; LPM_PIPELINE           ; 0           ; Untyped                              ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                              ;
+; REGISTERED_AT_END      ; 0           ; Untyped                              ;
+; OPTIMIZE_FOR_SPEED     ; 9           ; Untyped                              ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                              ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                              ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                   ;
+; DEVICE_FAMILY          ; MAX7000S    ; Untyped                              ;
+; USE_WYS                ; OFF         ; Untyped                              ;
+; STYLE                  ; FAST        ; Untyped                              ;
+; CBXI_PARAMETER         ; add_sub_bph ; Untyped                              ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                           ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                         ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                         ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                       ;
++------------------------+-------------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -262,7 +407,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Mar 27 14:36:52 2023
+    Info: Processing started: Tue Mar 28 15:00:11 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PillLoad_System -c PillLoad_System
 Info: Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info: Found 2 design units, including 1 entities, in source file pillload_system.vhd
@@ -279,15 +424,19 @@ Warning: Using design file single_cnt.vhd, which is not specified as a design fi
     Info: Found design unit 1: single_cnt-func_s
     Info: Found entity 1: single_cnt
 Info: Elaborating entity "single_cnt" for hierarchy "single_cnt:u2"
-Warning: Using design file display.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info: Found design unit 1: display-func
-    Info: Found entity 1: display
-Info: Elaborating entity "display" for hierarchy "single_cnt:u2|display:u1"
+Warning: Using design file display_bcd.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: display_BCD-func
+    Info: Found entity 1: display_BCD
+Info: Elaborating entity "display_BCD" for hierarchy "single_cnt:u2|display_BCD:u1"
 Warning: Using design file total.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: total-func_f
     Info: Found entity 1: total
 Info: Elaborating entity "total" for hierarchy "total:u3"
-Info: Elaborating entity "display" for hierarchy "total:u3|display:u1"
+Info: Elaborating entity "display_BCD" for hierarchy "total:u3|display_BCD:u1"
+Warning: Using design file display.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
+    Info: Found design unit 1: display-func
+    Info: Found entity 1: display
+Info: Elaborating entity "display" for hierarchy "total:u3|display:u3"
 Warning: Using design file control.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: control-func_co
     Info: Found entity 1: control
@@ -296,14 +445,54 @@ Warning: Using design file count.vhd, which is not specified as a design file fo
     Info: Found design unit 1: count-func_count
     Info: Found entity 1: count
 Info: Elaborating entity "count" for hierarchy "count:u5"
-Info: Implemented 189 device resources after synthesis - the final resource count might be different
-    Info: Implemented 20 input pins
-    Info: Implemented 51 output pins
-    Info: Implemented 118 logic cells
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 249 megabytes
-    Info: Processing ended: Mon Mar 27 14:36:55 2023
-    Info: Elapsed time: 00:00:03
+Info: Inferred 4 megafunctions from design logic
+    Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: "count:u5|tmpa[0]~0"
+    Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: "single_cnt:u2|tmpa[0]~0"
+    Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: "total:u3|tmp2[0]~0"
+    Info: Inferred lpm_counter megafunction (LPM_WIDTH=4) from the following logic: "total:u3|tmp1[0]~0"
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "divide:u1|Add0"
+Info: Elaborated megafunction instantiation "count:u5|lpm_counter:tmpa_rtl_0"
+Info: Instantiated megafunction "count:u5|lpm_counter:tmpa_rtl_0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "4"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+Info: Elaborated megafunction instantiation "single_cnt:u2|lpm_counter:tmpa_rtl_1"
+Info: Instantiated megafunction "single_cnt:u2|lpm_counter:tmpa_rtl_1" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "4"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+Info: Elaborated megafunction instantiation "total:u3|lpm_counter:tmp1_rtl_3"
+Info: Instantiated megafunction "total:u3|lpm_counter:tmp1_rtl_3" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "4"
+    Info: Parameter "LPM_DIRECTION" = "UP"
+    Info: Parameter "LPM_TYPE" = "LPM_COUNTER"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Instantiated megafunction "divide:u1|lpm_add_sub:Add0" with the following parameter:
+    Info: Parameter "LPM_WIDTH" = "17"
+    Info: Parameter "LPM_DIRECTION" = "ADD"
+    Info: Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info: Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|addcore:adder[2]", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|addcore:adder[2]|a_csnbuffer:oflow_node", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|addcore:adder[2]|a_csnbuffer:result_node", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|addcore:adder[1]", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|look_add:look_ahead_unit", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
+Info: Ignored 16 buffer(s)
+    Info: Ignored 16 SOFT buffer(s)
+Info: Promoted pin-driven signal(s) to global signal
+    Info: Promoted clock signal driven by pin "clk" to global clock signal
+Info: Implemented 147 device resources after synthesis - the final resource count might be different
+    Info: Implemented 21 input pins
+    Info: Implemented 25 output pins
+    Info: Implemented 74 macrocells
+    Info: Implemented 27 shareable expanders
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 247 megabytes
+    Info: Processing ended: Tue Mar 28 15:00:13 2023
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

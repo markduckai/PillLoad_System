@@ -12,7 +12,7 @@ END divide;
 
 ARCHITECTURE fuc_d OF divide IS
     SIGNAL counter : INTEGER RANGE 0 TO 99999 := 0;
-    SIGNAL div : INTEGER := 1000;
+    SIGNAL div : INTEGER := 10000;
     SIGNAL clk_tmp : STD_LOGIC;
 BEGIN
     PROCESS (cl1)

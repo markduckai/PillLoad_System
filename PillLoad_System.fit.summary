@@ -1,17 +1,9 @@
-Fitter Status : Successful - Mon Mar 27 14:37:00 2023
+Fitter Status : Successful - Tue Mar 28 15:00:14 2023
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : PillLoad_System
 Top-level Entity Name : PillLoad_System
-Family : Stratix II
-Device : EP2S15F484C3
+Family : MAX7000S
+Device : EPM7128SLC84-15
 Timing Models : Final
-Logic utilization : 1 %
-    Combinational ALUTs : 120 / 12,480 ( < 1 % )
-    Dedicated logic registers : 49 / 12,480 ( < 1 % )
-Total registers : 49
-Total pins : 71 / 343 ( 21 % )
-Total virtual pins : 0
-Total block memory bits : 0 / 419,328 ( 0 % )
-DSP block 9-bit elements : 0 / 96 ( 0 % )
-Total PLLs : 0 / 6 ( 0 % )
-Total DLLs : 0 / 2 ( 0 % )
+Total macrocells : 74 / 128 ( 58 % )
+Total pins : 50 / 68 ( 74 % )

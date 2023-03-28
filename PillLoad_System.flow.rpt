@@ -1,5 +1,5 @@
 Flow report for PillLoad_System
-Mon Mar 27 14:37:03 2023
+Tue Mar 28 15:00:16 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -35,28 +35,20 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------+
-; Flow Summary                                                             ;
-+-------------------------------+------------------------------------------+
-; Flow Status                   ; Successful - Mon Mar 27 14:37:03 2023    ;
-; Quartus II Version            ; 9.1 Build 222 10/21/2009 SJ Full Version ;
-; Revision Name                 ; PillLoad_System                          ;
-; Top-level Entity Name         ; PillLoad_System                          ;
-; Family                        ; Stratix II                               ;
-; Met timing requirements       ; Yes                                      ;
-; Logic utilization             ; 1 %                                      ;
-;     Combinational ALUTs       ; 120 / 12,480 ( < 1 % )                   ;
-;     Dedicated logic registers ; 49 / 12,480 ( < 1 % )                    ;
-; Total registers               ; 49                                       ;
-; Total pins                    ; 71 / 343 ( 21 % )                        ;
-; Total virtual pins            ; 0                                        ;
-; Total block memory bits       ; 0 / 419,328 ( 0 % )                      ;
-; DSP block 9-bit elements      ; 0 / 96 ( 0 % )                           ;
-; Total PLLs                    ; 0 / 6 ( 0 % )                            ;
-; Total DLLs                    ; 0 / 2 ( 0 % )                            ;
-; Device                        ; EP2S15F484C3                             ;
-; Timing Models                 ; Final                                    ;
-+-------------------------------+------------------------------------------+
++--------------------------------------------------------------------+
+; Flow Summary                                                       ;
++-------------------------+------------------------------------------+
+; Flow Status             ; Successful - Tue Mar 28 15:00:16 2023    ;
+; Quartus II Version      ; 9.1 Build 222 10/21/2009 SJ Full Version ;
+; Revision Name           ; PillLoad_System                          ;
+; Top-level Entity Name   ; PillLoad_System                          ;
+; Family                  ; MAX7000S                                 ;
+; Device                  ; EPM7128SLC84-15                          ;
+; Timing Models           ; Final                                    ;
+; Met timing requirements ; Yes                                      ;
+; Total macrocells        ; 74 / 128 ( 58 % )                        ;
+; Total pins              ; 50 / 68 ( 74 % )                         ;
++-------------------------+------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,22 +56,25 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/27/2023 14:36:53 ;
+; Start date & time ; 03/28/2023 15:00:11 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; PillLoad_System     ;
 +-------------------+---------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                    ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
-; Assignment Name                    ; Value                           ; Default Value ; Entity Name ; Section Id     ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID              ; 118902011290834.167989901302612 ; --            ; --          ; --             ;
-; PARTITION_COLOR                    ; 16764057                        ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE             ; SOURCE                          ; --            ; --          ; Top            ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                             ; --            ; --          ; eda_blast_fpga ;
-+------------------------------------+---------------------------------+---------------+-------------+----------------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                ;
++------------------------------------+---------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                    ; Value                                       ; Default Value ; Entity Name ; Section Id     ;
++------------------------------------+---------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID              ; 118902011290834.167998681123296             ; --            ; --          ; --             ;
+; FITTER_EFFORT                      ; Standard Fit                                ; Auto Fit      ; --          ; --             ;
+; MISC_FILE                          ; D:/VHDL/PillLoad_System/PillLoad_System.dpf ; --            ; --          ; --             ;
+; OPTIMIZE_HOLD_TIMING               ; IO Paths and Minimum TPD Paths              ; --            ; --          ; --             ;
+; PARTITION_COLOR                    ; 16764057                                    ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE             ; SOURCE                                      ; --            ; --          ; Top            ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS ; Off                                         ; --            ; --          ; eda_blast_fpga ;
++------------------------------------+---------------------------------------------+---------------+-------------+----------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -87,11 +82,11 @@ applicable agreement for further details.
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name             ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis    ; 00:00:03     ; 1.0                     ; 249 MB              ; 00:00:01                           ;
-; Fitter                  ; 00:00:04     ; 2.7                     ; 345 MB              ; 00:00:02                           ;
-; Assembler               ; 00:00:01     ; 1.0                     ; 247 MB              ; 00:00:01                           ;
-; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 177 MB              ; 00:00:00                           ;
-; Total                   ; 00:00:08     ; --                      ; --                  ; 00:00:04                           ;
+; Analysis & Synthesis    ; 00:00:02     ; 1.0                     ; 247 MB              ; 00:00:01                           ;
+; Fitter                  ; 00:00:00     ; 1.0                     ; 211 MB              ; 00:00:00                           ;
+; Assembler               ; 00:00:00     ; 1.0                     ; 200 MB              ; 00:00:00                           ;
+; Classic Timing Analyzer ; 00:00:00     ; 1.0                     ; 171 MB              ; 00:00:00                           ;
+; Total                   ; 00:00:02     ; --                      ; --                  ; 00:00:01                           ;
 +-------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,7 +108,7 @@ applicable agreement for further details.
 quartus_map --read_settings_files=on --write_settings_files=off PillLoad_System -c PillLoad_System
 quartus_fit --read_settings_files=off --write_settings_files=off PillLoad_System -c PillLoad_System
 quartus_asm --read_settings_files=off --write_settings_files=off PillLoad_System -c PillLoad_System
-quartus_tan --read_settings_files=off --write_settings_files=off PillLoad_System -c PillLoad_System --timing_analysis_only
+quartus_tan --read_settings_files=off --write_settings_files=off PillLoad_System -c PillLoad_System
 
 
 
