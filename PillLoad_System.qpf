@@ -17,13 +17,13 @@
 # -------------------------------------------------------------------------- #
 #
 # Quartus II
-# Version 9.1 Build 222 10/21/2009 SJ Full Version
-# Date created = 22:25:15  March 18, 2023
+# Version 9.0 Build 132 02/25/2009 SJ Full Version
+# Date created = 16:06:50  March 29, 2023
 #
 # -------------------------------------------------------------------------- #
 
-QUARTUS_VERSION = "9.1"
-DATE = "22:25:15  March 18, 2023"
+QUARTUS_VERSION = "9.0"
+DATE = "16:06:50  March 29, 2023"
 
 # Revisions
 

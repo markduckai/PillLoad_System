@@ -5,9 +5,9 @@ Timing Analyzer Summary
 Type           : Worst-case tsu
 Slack          : N/A
 Required Time  : None
-Actual Time    : 11.000 ns
-From           : pin1[3]
-To             : single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[0]
+Actual Time    : 16.000 ns
+From           : pin[0]
+To             : single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[3]
 From Clock     : --
 To Clock       : clk
 Failed Paths   : 0
@@ -15,7 +15,7 @@ Failed Paths   : 0
 Type           : Worst-case tco
 Slack          : N/A
 Required Time  : None
-Actual Time    : 35.000 ns
+Actual Time    : 42.000 ns
 From           : count:u5|tmp_j
 To             : en_g
 From Clock     : clk
@@ -26,8 +26,8 @@ Type           : Worst-case tpd
 Slack          : N/A
 Required Time  : None
 Actual Time    : 15.000 ns
-From           : mode
-To             : o1[1]
+From           : clr
+To             : en_g
 From Clock     : --
 To Clock       : --
 Failed Paths   : 0
@@ -35,8 +35,8 @@ Failed Paths   : 0
 Type           : Worst-case th
 Slack          : N/A
 Required Time  : None
-Actual Time    : 7.000 ns
-From           : pin2[4]
+Actual Time    : 5.000 ns
+From           : pin[0]
 To             : count:u5|tmp_j
 From Clock     : --
 To Clock       : clk
@@ -45,9 +45,9 @@ Failed Paths   : 0
 Type           : Clock Setup: 'clk'
 Slack          : N/A
 Required Time  : None
-Actual Time    : 33.33 MHz ( period = 30.000 ns )
+Actual Time    : 31.25 MHz ( period = 32.000 ns )
 From           : count:u5|tmp_j
-To             : single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[1]
+To             : total:u3|tmp2[0]
 From Clock     : clk
 To Clock       : clk
 Failed Paths   : 0

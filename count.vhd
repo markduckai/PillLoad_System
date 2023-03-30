@@ -2,10 +2,10 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.std_logic_arith.ALL;
 USE ieee.std_logic_unsigned.ALL;
-USE ieee.numeric_std.ALL;
 
 ENTITY count IS
     PORT (
+        clr : IN STD_LOGIC; --清零信号
         ci : IN STD_LOGIC; --进位信号
         pin : IN STD_LOGIC_VECTOR(7 DOWNTO 0); --最大装瓶量BCD码输入
         judge : OUT STD_LOGIC; --判断装瓶量是否超过最大瓶数
@@ -25,9 +25,13 @@ ARCHITECTURE func_count OF count IS
         );
     END COMPONENT;
 BEGIN
-    PROCESS (ci, pin)
+    PROCESS (clr, ci, pin)
     BEGIN
-        IF (rising_edge(ci)) THEN
+        IF (clr = '1') THEN--清零时重置输出端口信号
+            tmpa <= "0000";
+            tmpb <= "0000";
+            tmp_j <= '0';
+        ELSIF (rising_edge(ci)) THEN
             IF (tmp_j = '0') THEN --当没超过最大计数时继续计数
                 IF (tmpb = "1001") THEN
                     tmpb <= "0000";
@@ -35,9 +39,9 @@ BEGIN
                 ELSE
                     tmpb <= tmpb + 1;
                 END IF;
-                IF (tmpa = pin(7 DOWNTO 4) AND tmpb = pin(3 DOWNTO 0)) THEN
-                    tmp_j <= '1';
-                END IF;
+            END IF;
+            IF (tmpa = pin(7 DOWNTO 4) AND tmpb = pin(3 DOWNTO 0)) THEN
+                tmp_j <= '1';
             END IF;
         END IF;
     END PROCESS;

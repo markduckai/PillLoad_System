@@ -2,5 +2,6 @@
 <LOG_ROOT>
 	<PROJECT NAME="PillLoad_System">
 		<CBX_INST_ENTRY INSTANCE_NAME="|PillLoad_System|divide:u1|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_bph.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|PillLoad_System|total:u3|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_3kh.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

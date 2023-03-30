@@ -5,7 +5,7 @@ USE ieee.std_logic_unsigned.ALL;
 
 ENTITY divide IS
     PORT (
-        cl1 : IN STD_LOGIC;
+        clk : IN STD_LOGIC;
         clk_divide : OUT STD_LOGIC
     );
 END divide;
@@ -15,15 +15,26 @@ ARCHITECTURE fuc_d OF divide IS
     SIGNAL div : INTEGER := 10000;
     SIGNAL clk_tmp : STD_LOGIC;
 BEGIN
-    PROCESS (cl1)
+    PROCESS (clk)
     BEGIN
-        IF rising_edge(cl1) THEN
-            counter <= counter + 1;
+        IF rising_edge(clk) THEN
             IF counter = div THEN
                 counter <= 0;
-                clk_tmp <= NOT clk_tmp;
+            ELSE
+                counter <= counter + 1;
             END IF;
         END IF;
     END PROCESS;
+    PROCESS (clk, counter)
+    BEGIN
+        IF (clk'event AND clk = '1') THEN
+            IF (counter > 5000) THEN
+                clk_tmp <= '1'; --1Hz·½²¨
+            ELSE
+                clk_tmp <= '0';
+            END IF;
+        END IF;
+    END PROCESS;
+
     clk_divide <= clk_tmp;
 END fuc_d;
