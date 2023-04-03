@@ -38,9 +38,9 @@ BEGIN
             tmp1 <= "0000";
             tmp2 <= "0000";
             tmp3 <= "0000";
-        ELSIF (en_cnt = '1' AND cnt_init = '1') THEN --计数使能
+        ELSIF (en_cnt = '1' AND cnt_init = '1' AND judge = '0') THEN --计数使能
             IF (rising_edge(clk_divide)) THEN
-                IF (tmp3 = "1001" AND tmp2 = "1010") THEN
+                IF (tmp3 = "1001" AND tmp2 = "1001") THEN
                     tmp3 <= "0000";
                     tmp2 <= "0000";
                     tmp1 <= tmp1 + 1;

@@ -1,9 +1,9 @@
-Fitter Status : Successful - Thu Mar 30 16:11:06 2023
+Fitter Status : Successful - Mon Apr 03 16:46:37 2023
 Quartus II Version : 9.1 Build 222 10/21/2009 SJ Full Version
 Revision Name : PillLoad_System
 Top-level Entity Name : PillLoad_System
 Family : MAX7000S
 Device : EPM7128SLC84-15
 Timing Models : Final
-Total macrocells : 103 / 128 ( 80 % )
+Total macrocells : 111 / 128 ( 87 % )
 Total pins : 43 / 68 ( 63 % )

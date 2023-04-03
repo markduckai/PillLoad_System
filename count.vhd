@@ -31,17 +31,20 @@ BEGIN
             tmpa <= "0000";
             tmpb <= "0000";
             tmp_j <= '0';
-        ELSIF (rising_edge(ci)) THEN
-            IF (tmp_j = '0') THEN --当没超过最大计数时继续计数
+        ELSIF (rising_edge(ci) AND tmp_j = '0') THEN
+            IF ((tmpa + 1 = pin(7 DOWNTO 4) AND tmpb = "1001" AND "0000" = pin(3 DOWNTO 0)) OR (tmpa = pin(7 DOWNTO 4) AND tmpb + 1 = pin(3 DOWNTO 0))) THEN
+                tmp_j <= '1';
                 IF (tmpb = "1001") THEN
                     tmpb <= "0000";
                     tmpa <= tmpa + 1;
                 ELSE
                     tmpb <= tmpb + 1;
                 END IF;
-            END IF;
-            IF (tmpa = pin(7 DOWNTO 4) AND tmpb = pin(3 DOWNTO 0)) THEN
-                tmp_j <= '1';
+            ELSIF (tmpb = "1001") THEN
+                tmpb <= "0000";
+                tmpa <= tmpa + 1;
+            ELSE
+                tmpb <= tmpb + 1;
             END IF;
         END IF;
     END PROCESS;

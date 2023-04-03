@@ -35,8 +35,8 @@ BEGIN
         ELSIF (rising_edge(clk_divide)) THEN
             IF (cnt_init = '1' AND en_cnt = '1') THEN --计数使能
                 IF ((tmpa + 1 = pin(7 DOWNTO 4) AND tmpb = "1001" AND "0000" = pin(3 DOWNTO 0)) OR (tmpa = pin(7 DOWNTO 4) AND tmpb + 1 = pin(3 DOWNTO 0))) THEN
-                    tmpa <= "0000";
                     tmpb <= "0000";
+                    tmpa <= "0000";
                     ci <= '1';
                 ELSIF (tmpb = "1001") THEN
                     tmpb <= "0000";
