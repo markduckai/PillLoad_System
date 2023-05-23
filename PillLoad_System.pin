@@ -116,19 +116,19 @@ o2[3]                        : 48        : output : TTL               :         
 o2[4]                        : 49        : output : TTL               :         :           : Y              
 o2[5]                        : 50        : output : TTL               :         :           : Y              
 o2[6]                        : 51        : output : TTL               :         :           : Y              
-RESERVED                     : 52        :        :                   :         :           :                
+en_a                         : 52        : output : TTL               :         :           : Y              
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 pin[0]                       : 54        : input  : TTL               :         :           : Y              
 RESERVED                     : 55        :        :                   :         :           :                
 clk                          : 56        : input  : TTL               :         :           : Y              
-RESERVED                     : 57        :        :                   :         :           :                
+clk_alarm                    : 57        : input  : TTL               :         :           : Y              
 RESERVED                     : 58        :        :                   :         :           :                
 GND                          : 59        : gnd    :                   :         :           :                
 RESERVED                     : 60        :        :                   :         :           :                
 RESERVED                     : 61        :        :                   :         :           :                
 TCK                          : 62        : input  : TTL               :         :           : N              
 RESERVED                     : 63        :        :                   :         :           :                
-clk_divide                   : 64        : output : TTL               :         :           : N              
+RESERVED                     : 64        :        :                   :         :           :                
 RESERVED                     : 65        :        :                   :         :           :                
 VCCIO                        : 66        : power  :                   : 5.0V    :           :                
 RESERVED                     : 67        :        :                   :         :           :                

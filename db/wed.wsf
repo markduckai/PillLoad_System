@@ -1147,16 +1147,24 @@ VECTOR("D:/VHDL/PillLoad_System/PillLoad_System.vwf")
 		VISIBLE = Y;
 		FLAG = N;
 	}
+	LINE{
+		SIGNAL = "en_a";
+		INDEX = 42;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
 }
 
 VECTOR("D:/VHDL/PillLoad_System/db/PillLoad_System.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 150000000000000;
-		NUMERATOR = 949;
-		DENOMINATOR = 150000000000000;
-		TOP_INDEX = 0;
+		ZBEGIN = 29201791359325;
+		ZEND = 66030031612221;
+		NUMERATOR = 932;
+		DENOMINATOR = 36828240252896;
+		TOP_INDEX = 3;
 	}
 	CLOCK{
 		PERIOD = 10000;
@@ -1497,6 +1505,14 @@ VECTOR("D:/VHDL/PillLoad_System/db/PillLoad_System.sim.cvwf")
 	LINE{
 		SIGNAL = "clk_divide";
 		INDEX = 41;
+		FORMAT = E;
+		SCALE = 1;
+		VISIBLE = Y;
+		FLAG = N;
+	}
+	LINE{
+		SIGNAL = "en_a";
+		INDEX = 42;
 		FORMAT = E;
 		SCALE = 1;
 		VISIBLE = Y;

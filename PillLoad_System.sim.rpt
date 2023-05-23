@@ -1,5 +1,5 @@
 Simulator report for PillLoad_System
-Mon Apr 03 16:49:46 2023
+Mon Apr 10 11:16:09 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+-----------------+
 ; Simulation Start Time       ; 0 ps            ;
 ; Simulation End Time         ; 150.0 s         ;
-; Simulation Netlist Size     ; 171 nodes       ;
-; Simulation Coverage         ;      53.33 %    ;
-; Total Number of Transitions ; 6033798         ;
+; Simulation Netlist Size     ; 175 nodes       ;
+; Simulation Coverage         ;      52.60 %    ;
+; Total Number of Transitions ; 6033850         ;
 ; Simulation Breakpoints      ; 0               ;
 ; Family                      ; MAX7000S        ;
 ; Device                      ; EPM7128SLC84-15 ;
@@ -94,13 +94,13 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      53.33 % ;
-; Total nodes checked                                 ; 171          ;
-; Total output ports checked                          ; 150          ;
-; Total output ports with complete 1/0-value coverage ; 80           ;
-; Total output ports with no 1/0-value coverage       ; 62           ;
-; Total output ports with no 1-value coverage         ; 64           ;
-; Total output ports with no 0-value coverage         ; 68           ;
+; Total coverage as a percentage                      ;      52.60 % ;
+; Total nodes checked                                 ; 175          ;
+; Total output ports checked                          ; 154          ;
+; Total output ports with complete 1/0-value coverage ; 81           ;
+; Total output ports with no 1/0-value coverage       ; 65           ;
+; Total output ports with no 1-value coverage         ; 67           ;
+; Total output ports with no 0-value coverage         ; 71           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -190,6 +190,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |PillLoad_System|o2[10]                                          ; |PillLoad_System|o2[10]                                          ; padio            ;
 ; |PillLoad_System|o2[8]                                           ; |PillLoad_System|o2[8]                                           ; padio            ;
 ; |PillLoad_System|o1[0]                                           ; |PillLoad_System|o1[0]                                           ; padio            ;
+; |PillLoad_System|single_cnt:u2|Equal1~3                          ; |PillLoad_System|single_cnt:u2|Equal1~3                          ; dataout          ;
 +------------------------------------------------------------------+------------------------------------------------------------------+------------------+
 
 
@@ -213,6 +214,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |PillLoad_System|count:u5|Equal0~15                              ; |PillLoad_System|count:u5|Equal0~15                              ; dataout          ;
 ; |PillLoad_System|count:u5|Equal0~19                              ; |PillLoad_System|count:u5|Equal0~19                              ; dataout          ;
 ; |PillLoad_System|control:u4|en_green~3                           ; |PillLoad_System|control:u4|en_green~3                           ; dataout          ;
+; |PillLoad_System|control:u4|en_alarm~2                           ; |PillLoad_System|control:u4|en_alarm~2                           ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[1]    ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[1]    ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[0]    ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[0]    ; dataout          ;
 ; |PillLoad_System|o1~35                                           ; |PillLoad_System|o1~35                                           ; dataout          ;
@@ -235,6 +237,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |PillLoad_System|single_cnt:u2|Equal0~29sexp2                    ; |PillLoad_System|single_cnt:u2|Equal0~29sexp2                    ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp1   ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp1   ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp2   ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp2   ; dataout          ;
+; |PillLoad_System|clk_alarm                                       ; |PillLoad_System|clk_alarm~corein                                ; dataout          ;
 ; |PillLoad_System|mode                                            ; |PillLoad_System|mode~corein                                     ; dataout          ;
 ; |PillLoad_System|pin[0]                                          ; |PillLoad_System|pin[0]~corein                                   ; dataout          ;
 ; |PillLoad_System|pin[2]                                          ; |PillLoad_System|pin[2]~corein                                   ; dataout          ;
@@ -244,6 +247,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |PillLoad_System|pin[6]                                          ; |PillLoad_System|pin[6]~corein                                   ; dataout          ;
 ; |PillLoad_System|pin[7]                                          ; |PillLoad_System|pin[7]~corein                                   ; dataout          ;
 ; |PillLoad_System|en_g                                            ; |PillLoad_System|en_g                                            ; padio            ;
+; |PillLoad_System|en_a                                            ; |PillLoad_System|en_a                                            ; padio            ;
 ; |PillLoad_System|o1[4]                                           ; |PillLoad_System|o1[4]                                           ; padio            ;
 ; |PillLoad_System|o1[5]                                           ; |PillLoad_System|o1[5]                                           ; padio            ;
 ; |PillLoad_System|o1[6]                                           ; |PillLoad_System|o1[6]                                           ; padio            ;
@@ -251,18 +255,18 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |PillLoad_System|o2[12]                                          ; |PillLoad_System|o2[12]                                          ; padio            ;
 ; |PillLoad_System|o2[13]                                          ; |PillLoad_System|o2[13]                                          ; padio            ;
 ; |PillLoad_System|o2[14]                                          ; |PillLoad_System|o2[14]                                          ; padio            ;
-; |PillLoad_System|single_cnt:u2|Equal3~9                          ; |PillLoad_System|single_cnt:u2|Equal3~9                          ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal3~10                         ; |PillLoad_System|single_cnt:u2|Equal3~10                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~41                         ; |PillLoad_System|single_cnt:u2|Equal0~41                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~42                         ; |PillLoad_System|single_cnt:u2|Equal0~42                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~43                         ; |PillLoad_System|single_cnt:u2|Equal0~43                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~44                         ; |PillLoad_System|single_cnt:u2|Equal0~44                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal3~11                         ; |PillLoad_System|single_cnt:u2|Equal3~11                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal3~12                         ; |PillLoad_System|single_cnt:u2|Equal3~12                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~45                         ; |PillLoad_System|single_cnt:u2|Equal0~45                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~46                         ; |PillLoad_System|single_cnt:u2|Equal0~46                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~47                         ; |PillLoad_System|single_cnt:u2|Equal0~47                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~48                         ; |PillLoad_System|single_cnt:u2|Equal0~48                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~5                          ; |PillLoad_System|single_cnt:u2|Equal3~5                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~6                          ; |PillLoad_System|single_cnt:u2|Equal3~6                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~33                         ; |PillLoad_System|single_cnt:u2|Equal0~33                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~34                         ; |PillLoad_System|single_cnt:u2|Equal0~34                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~35                         ; |PillLoad_System|single_cnt:u2|Equal0~35                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~36                         ; |PillLoad_System|single_cnt:u2|Equal0~36                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~7                          ; |PillLoad_System|single_cnt:u2|Equal3~7                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~8                          ; |PillLoad_System|single_cnt:u2|Equal3~8                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~37                         ; |PillLoad_System|single_cnt:u2|Equal0~37                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~38                         ; |PillLoad_System|single_cnt:u2|Equal0~38                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~39                         ; |PillLoad_System|single_cnt:u2|Equal0~39                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~40                         ; |PillLoad_System|single_cnt:u2|Equal0~40                         ; dataout          ;
 +------------------------------------------------------------------+------------------------------------------------------------------+------------------+
 
 
@@ -287,6 +291,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |PillLoad_System|count:u5|Equal0~15                              ; |PillLoad_System|count:u5|Equal0~15                              ; dataout          ;
 ; |PillLoad_System|count:u5|Equal0~19                              ; |PillLoad_System|count:u5|Equal0~19                              ; dataout          ;
 ; |PillLoad_System|count:u5|tmp_j                                  ; |PillLoad_System|count:u5|tmp_j                                  ; dataout          ;
+; |PillLoad_System|control:u4|en_alarm~2                           ; |PillLoad_System|control:u4|en_alarm~2                           ; dataout          ;
 ; |PillLoad_System|control:u4|en_green~6                           ; |PillLoad_System|control:u4|en_green~6                           ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[1]    ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[1]    ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[0]    ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|dffs[0]    ; dataout          ;
@@ -311,6 +316,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |PillLoad_System|single_cnt:u2|Equal0~29sexp2                    ; |PillLoad_System|single_cnt:u2|Equal0~29sexp2                    ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp1   ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp1   ; dataout          ;
 ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp2   ; |PillLoad_System|single_cnt:u2|lpm_counter:tmpa_rtl_1|_~3sexp2   ; dataout          ;
+; |PillLoad_System|clk_alarm                                       ; |PillLoad_System|clk_alarm~corein                                ; dataout          ;
 ; |PillLoad_System|mode                                            ; |PillLoad_System|mode~corein                                     ; dataout          ;
 ; |PillLoad_System|pin[0]                                          ; |PillLoad_System|pin[0]~corein                                   ; dataout          ;
 ; |PillLoad_System|pin[2]                                          ; |PillLoad_System|pin[2]~corein                                   ; dataout          ;
@@ -320,6 +326,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |PillLoad_System|pin[6]                                          ; |PillLoad_System|pin[6]~corein                                   ; dataout          ;
 ; |PillLoad_System|pin[7]                                          ; |PillLoad_System|pin[7]~corein                                   ; dataout          ;
 ; |PillLoad_System|en_r                                            ; |PillLoad_System|en_r                                            ; padio            ;
+; |PillLoad_System|en_a                                            ; |PillLoad_System|en_a                                            ; padio            ;
 ; |PillLoad_System|o1[4]                                           ; |PillLoad_System|o1[4]                                           ; padio            ;
 ; |PillLoad_System|o1[5]                                           ; |PillLoad_System|o1[5]                                           ; padio            ;
 ; |PillLoad_System|o1[6]                                           ; |PillLoad_System|o1[6]                                           ; padio            ;
@@ -328,18 +335,18 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |PillLoad_System|o2[12]                                          ; |PillLoad_System|o2[12]                                          ; padio            ;
 ; |PillLoad_System|o2[13]                                          ; |PillLoad_System|o2[13]                                          ; padio            ;
 ; |PillLoad_System|o2[14]                                          ; |PillLoad_System|o2[14]                                          ; padio            ;
-; |PillLoad_System|single_cnt:u2|Equal3~9                          ; |PillLoad_System|single_cnt:u2|Equal3~9                          ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal3~10                         ; |PillLoad_System|single_cnt:u2|Equal3~10                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~41                         ; |PillLoad_System|single_cnt:u2|Equal0~41                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~42                         ; |PillLoad_System|single_cnt:u2|Equal0~42                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~43                         ; |PillLoad_System|single_cnt:u2|Equal0~43                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~44                         ; |PillLoad_System|single_cnt:u2|Equal0~44                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal3~11                         ; |PillLoad_System|single_cnt:u2|Equal3~11                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal3~12                         ; |PillLoad_System|single_cnt:u2|Equal3~12                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~45                         ; |PillLoad_System|single_cnt:u2|Equal0~45                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~46                         ; |PillLoad_System|single_cnt:u2|Equal0~46                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~47                         ; |PillLoad_System|single_cnt:u2|Equal0~47                         ; dataout          ;
-; |PillLoad_System|single_cnt:u2|Equal0~48                         ; |PillLoad_System|single_cnt:u2|Equal0~48                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~5                          ; |PillLoad_System|single_cnt:u2|Equal3~5                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~6                          ; |PillLoad_System|single_cnt:u2|Equal3~6                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~33                         ; |PillLoad_System|single_cnt:u2|Equal0~33                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~34                         ; |PillLoad_System|single_cnt:u2|Equal0~34                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~35                         ; |PillLoad_System|single_cnt:u2|Equal0~35                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~36                         ; |PillLoad_System|single_cnt:u2|Equal0~36                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~7                          ; |PillLoad_System|single_cnt:u2|Equal3~7                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal3~8                          ; |PillLoad_System|single_cnt:u2|Equal3~8                          ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~37                         ; |PillLoad_System|single_cnt:u2|Equal0~37                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~38                         ; |PillLoad_System|single_cnt:u2|Equal0~38                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~39                         ; |PillLoad_System|single_cnt:u2|Equal0~39                         ; dataout          ;
+; |PillLoad_System|single_cnt:u2|Equal0~40                         ; |PillLoad_System|single_cnt:u2|Equal0~40                         ; dataout          ;
 +------------------------------------------------------------------+------------------------------------------------------------------+------------------+
 
 
@@ -356,18 +363,19 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Apr 03 16:46:44 2023
+    Info: Processing started: Mon Apr 10 11:13:08 2023
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off PillLoad_System -c PillLoad_System
 Info: Using vector source file "D:/VHDL/PillLoad_System/PillLoad_System.vwf"
+Warning: Can't find signal in vector source file for input pin "|PillLoad_System|clk_alarm"
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      53.33 %
-Info: Number of transitions in simulation is 6033798
-Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 159 megabytes
-    Info: Processing ended: Mon Apr 03 16:49:46 2023
-    Info: Elapsed time: 00:03:02
-    Info: Total CPU time (on all processors): 00:01:06
+Info: Simulation coverage is      52.60 %
+Info: Number of transitions in simulation is 6033850
+Info: Quartus II Simulator was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 158 megabytes
+    Info: Processing ended: Mon Apr 10 11:16:09 2023
+    Info: Elapsed time: 00:03:01
+    Info: Total CPU time (on all processors): 00:01:31
 
 

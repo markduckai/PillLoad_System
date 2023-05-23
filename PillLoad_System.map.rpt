@@ -1,5 +1,5 @@
 Analysis & Synthesis report for PillLoad_System
-Mon Apr 03 16:46:36 2023
+Mon May 22 09:15:19 2023
 Quartus II Version 9.1 Build 222 10/21/2009 SJ Full Version
 
 
@@ -55,13 +55,13 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                           ;
 +-----------------------------+------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Apr 03 16:46:36 2023    ;
+; Analysis & Synthesis Status ; Successful - Mon May 22 09:15:19 2023    ;
 ; Quartus II Version          ; 9.1 Build 222 10/21/2009 SJ Full Version ;
 ; Revision Name               ; PillLoad_System                          ;
 ; Top-level Entity Name       ; PillLoad_System                          ;
 ; Family                      ; MAX7000S                                 ;
-; Total macrocells            ; 111                                      ;
-; Total pins                  ; 39                                       ;
+; Total macrocells            ; 112                                      ;
+; Total pins                  ; 40                                       ;
 +-----------------------------+------------------------------------------+
 
 
@@ -168,15 +168,15 @@ applicable agreement for further details.
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 111                  ;
+; Logic cells          ; 112                  ;
 ; Total registers      ; 48                   ;
-; I/O pins             ; 39                   ;
+; I/O pins             ; 40                   ;
 ; Shareable expanders  ; 9                    ;
 ; Parallel expanders   ; 12                   ;
 ; Maximum fan-out node ; clr                  ;
-; Maximum fan-out      ; 33                   ;
-; Total fan-out        ; 948                  ;
-; Average fan-out      ; 5.96                 ;
+; Maximum fan-out      ; 34                   ;
+; Total fan-out        ; 951                  ;
+; Average fan-out      ; 5.91                 ;
 +----------------------+----------------------+
 
 
@@ -185,8 +185,8 @@ applicable agreement for further details.
 +--------------------------------+------------+------+-------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node     ; Macrocells ; Pins ; Full Hierarchy Name                                   ; Library Name ;
 +--------------------------------+------------+------+-------------------------------------------------------+--------------+
-; |PillLoad_System               ; 111        ; 39   ; |PillLoad_System                                      ; work         ;
-;    |control:u4|                ; 2          ; 0    ; |PillLoad_System|control:u4                           ; work         ;
+; |PillLoad_System               ; 112        ; 40   ; |PillLoad_System                                      ; work         ;
+;    |control:u4|                ; 3          ; 0    ; |PillLoad_System|control:u4                           ; work         ;
 ;    |count:u5|                  ; 18         ; 0    ; |PillLoad_System|count:u5                             ; work         ;
 ;       |lpm_counter:tmpa_rtl_2| ; 4          ; 0    ; |PillLoad_System|count:u5|lpm_counter:tmpa_rtl_2      ; work         ;
 ;    |divide:u1|                 ; 19         ; 0    ; |PillLoad_System|divide:u1                            ; work         ;
@@ -484,31 +484,31 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 222 10/21/2009 SJ Full Version
-    Info: Processing started: Mon Apr 03 16:46:33 2023
+    Info: Processing started: Mon May 22 09:15:16 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off PillLoad_System -c PillLoad_System
 Info: Parallel compilation is enabled and will use 16 of the 16 processors detected
 Warning: Using design file pillload_system.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: PillLoad_System-func
     Info: Found entity 1: PillLoad_System
 Info: Elaborating entity "PillLoad_System" for the top level hierarchy
-Warning (10631): VHDL Process Statement warning at pillload_system.vhd(78): inferring latch(es) for signal or variable "pin1", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at pillload_system.vhd(78): inferring latch(es) for signal or variable "pin2", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "pin2[0]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[1]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[2]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[3]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[4]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[5]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[6]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin2[7]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[0]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[1]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[2]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[3]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[4]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[5]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[6]" at pillload_system.vhd(78)
-Info (10041): Inferred latch for "pin1[7]" at pillload_system.vhd(78)
+Warning (10631): VHDL Process Statement warning at pillload_system.vhd(80): inferring latch(es) for signal or variable "pin1", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at pillload_system.vhd(80): inferring latch(es) for signal or variable "pin2", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "pin2[0]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[1]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[2]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[3]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[4]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[5]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[6]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin2[7]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[0]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[1]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[2]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[3]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[4]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[5]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[6]" at pillload_system.vhd(80)
+Info (10041): Inferred latch for "pin1[7]" at pillload_system.vhd(80)
 Warning: Entity "divide" obtained from "D:/VHDL/PillLoad_System/divide.vhd" instead of from Quartus II megafunction library
 Warning: Using design file divide.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info: Found design unit 1: divide-fuc_d
@@ -585,15 +585,15 @@ Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|look_add
 Info: Elaborated megafunction instantiation "divide:u1|lpm_add_sub:Add0|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "divide:u1|lpm_add_sub:Add0"
 Info: Ignored 19 buffer(s)
     Info: Ignored 19 SOFT buffer(s)
-Info: Implemented 159 device resources after synthesis - the final resource count might be different
-    Info: Implemented 13 input pins
+Info: Implemented 161 device resources after synthesis - the final resource count might be different
+    Info: Implemented 14 input pins
     Info: Implemented 26 output pins
-    Info: Implemented 111 macrocells
+    Info: Implemented 112 macrocells
     Info: Implemented 9 shareable expanders
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 247 megabytes
-    Info: Processing ended: Mon Apr 03 16:46:36 2023
+    Info: Peak virtual memory: 246 megabytes
+    Info: Processing ended: Mon May 22 09:15:19 2023
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

@@ -1,5 +1,6 @@
 |PillLoad_System
 clk => divide:u1.clk
+clk_alarm => control:u4.clk_alarm
 clr => single_cnt:u2.clr
 clr => total:u3.clr
 clr => control:u4.clr
@@ -64,7 +65,7 @@ o2[13] <= total:u3.ou[13]
 o2[14] <= total:u3.ou[14]
 en_g <= control:u4.en_green
 en_r <= control:u4.en_red
-clk_divide <= divide:u1.clk_divide
+en_a <= control:u4.en_alarm
 
 
 |PillLoad_System|divide:u1
@@ -268,11 +269,14 @@ pout[6] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 clr => tmp_cnt.OUTPUTSELECT
 clr => tmp_green.OUTPUTSELECT
 clr => tmp_red.OUTPUTSELECT
+clr => tmp_alarm.OUTPUTSELECT
+clk_alarm => tmp_alarm.DATAA
 judge => process_0.IN0
 judge => tmp_red.DATAA
 en_cnt <= tmp_cnt.DB_MAX_OUTPUT_PORT_TYPE
 en_green <= tmp_green.DB_MAX_OUTPUT_PORT_TYPE
 en_red <= tmp_red.DB_MAX_OUTPUT_PORT_TYPE
+en_alarm <= tmp_alarm.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |PillLoad_System|count:u5
